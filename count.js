@@ -1,40 +1,114 @@
 //! count.js
-//! version : 0.1.0
+//! version : 0.1.1
 //! authors : Nick Kaye
 //! license : MIT
 //! www.nickkaye.com/count-js
 
 (function (undefined) {
-  /**
-   * Constants
-   */
-
   var count,
-    VERSION = '0.1.0',
+    VERSION = '0.1.1',
+    words = {
+      0: 'zero',
+      1: 'one',
+      2: 'two',
+      3: 'three',
+      4: 'four',
+      5: 'five',
+      6: 'six',
+      7: 'seven',
+      8: 'eight',
+      9: 'nine',
+      10: 'ten',
+      11: 'eleven',
+      12: 'twelve',
+      13: 'thirteen',
+      14: 'fourteen',
+      15: 'fifteen',
+      16: 'sixteen',
+      17: 'seventeen',
+      18: 'eighteen',
+      19: 'nineteen',
+      20: 'twenty',
+      30: 'thirty',
+      40: 'forty',
+      50: 'fifty',
+      60: 'sixty',
+      70: 'seventy',
+      80: 'eighty',
+      90: 'ninety'
+    },
+    zeros = {
+      1: 'ten',
+      2: 'hundred',
+      3: 'thousand',
+      6: 'million',
+      9: 'billion',
+      12: 'trillion'
+    },
+    i,
     oldGlobalCount,
     hasOwnProperty = Object.prototype.hasOwnProperty,
-  // NodeJS:
     globalScope = typeof global !== 'undefined' ? global : this,
     hasModule = (typeof module !== 'undefined' && module.exports);
 
-  function hasOwnProp(a, b) {
-    return hasOwnProperty.call(a, b);
+  /**
+   * @param {number} num
+   * @returns {array} words representing the number
+   */
+  function wordsForNumber(num) {
+    var _n = num,
+      _out = [],
+      tens,
+      hundreds,
+      thousands,
+      millions,
+      billions,
+      trillions;
+
+    if (_n === 0) {
+      _out.push(words[0]);
+    } else {
+      while (_n > 0) {
+        //
+        // from 1 to 19
+        if (_n < 20) {
+          _out.push(words[_n]);
+          _n = 0;
+        }
+        // from 20 to 99
+        else if (_n < 100) {
+          tens = Math.floor(_n / 10);
+          _out.push(words[tens * 10]);
+          _n -= tens * 10;
+        }
+
+        // TODO: iterate through the possible x10 digits and reference zeros{} language dynamically
+
+        // from 100 to 999
+        else if (_n < 100) {
+          hundreds = Math.floor(_n / 100);
+          _out.push(words[hundreds]);
+          _out.push(zeros[2]);
+          _n -= hundreds * 100;
+        }
+
+        // TODO: the rest...
+      }
+    }
+    return _out;
+  }
+
+  function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
   }
 
   function defaultParsingFlags() {
-    // We need to deep clone this object, and es5 standard is not very
-    // helpful.
+    // We need to deep clone this object,
+    // and es5 standard is not very helpful.
     return {
       empty: false,
-      unusedTokens: [],
-      unusedInput: [],
-      overflow: -2,
-      charsLeftOver: 0,
       nullInput: false,
-      invalidMonth: null,
-      invalidFormat: false,
-      userInvalidated: false,
-      iso: false
+      userInvalidated: false
     };
   }
 
@@ -170,14 +244,30 @@
     return m;
   };
 
-  /************************************
-   Count Prototype
-   ************************************/
+  /**
+   * Count Prototype
+   */
 
   extend(count.fn = Count.prototype, {
 
+    /**
+     * Create a camel case block out of the input.
+     * @returns {string}
+     */
     camel: function () {
-      return 'ThisWillWork';
+      var out = '',
+        words = this.words();
+      for (i = 0; i < words.length; i++) {
+        out += capitalize(words[i]);
+      }
+      return out;
+    },
+
+    /**
+     * Get the sequence of words that spells out the count
+     */
+    words: function () {
+      return wordsForNumber(this._i);
     },
 
     clone: function () {
@@ -196,8 +286,12 @@
 
   /**
    * Exposing Count
-   * @param shouldDeprecate
    */
+
+  function hasOwnProp(a, b) {
+    return hasOwnProperty.call(a, b);
+  }
+
   function makeGlobal(shouldDeprecate) {
     /*global ender:false */
     if (typeof ender !== 'undefined') {
