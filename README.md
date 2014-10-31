@@ -9,7 +9,7 @@ A tiny javascript library to count in natural language e.g. Zero, One, Two, Thre
 Here's all this does so far:
 
     // Factory's name will be "FactoryFive"
-    var factoryName = 'Factory' + count(5);
+    var factoryName = 'Factory' + count(5).camel();
    
 ## [Changelog](CHANGELOG.md)
 
