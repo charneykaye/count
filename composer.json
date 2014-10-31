@@ -1,0 +1,33 @@
+{
+  "name": "nickckaye/count",
+  "description": "A tiny javascript library to count in natural language e.g. Zero, One, Two, Three, and beyond.",
+  "keywords": [
+    "count",
+    "date",
+    "natural",
+    "format",
+    "i18n"
+  ],
+  "homepage": "http://github.com/nickckaye/count/",
+  "authors": [
+    {
+      "name": "Nick Kaye",
+      "email": "nick.c.kaye@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "type": "component",
+  "require": {
+    "robloach/component-installer": "*"
+  },
+  "extra": {
+    "component": {
+      "scripts": [
+        "count.js"
+      ],
+      "files": [
+        "min/*.js"
+      ]
+    }
+  }
+}

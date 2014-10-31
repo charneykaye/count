@@ -1,0 +1,6 @@
+(function () {
+  var global = this,
+    require = function () {
+      return global.count;
+    },
+    exports = global.NPM_TESTS = {};

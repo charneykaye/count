@@ -1,0 +1,10 @@
+node_modules/
+.DS_Store
+min/count+customlangs.js
+min/count+customlangs.min.js
+min/tests.js
+sauce_connect.log
+.sauce-labs.creds
+npm-debug.log
+/.idea/
+*.iml
