@@ -70,29 +70,32 @@
     } else {
       while (_n > 0) {
         //
-        // from 1 to 19
+        // from 1 to 19 e.g. "seventeen" (done)
         if (_n < 20) {
           _out.push(words[_n]);
           _n = 0;
         }
-        // from 20 to 99
+        // from 20 to 99 e.g. "eighty" (leave <10)
         else if (_n < 100) {
           tens = Math.floor(_n / 10);
           _out.push(words[tens * 10]);
           _n -= tens * 10;
         }
-
-        // TODO: iterate through the possible x10 digits and reference zeros{} language dynamically
-
-        // from 100 to 999
+        // from 100 to 999 e.g. "two hundred" (leave <100)
         else if (_n < 100) {
           hundreds = Math.floor(_n / 100);
           _out.push(words[hundreds]);
           _out.push(zeros[2]);
           _n -= hundreds * 100;
         }
-
-        // TODO: the rest...
+        // from 100 to 999 e.g. "two hundred" (leave <100)
+        else if (_n < 1000) {
+          hundreds = Math.floor(_n / 100);
+          _out.push(words[hundreds]);
+          _out.push(zeros[2]);
+          _n -= hundreds * 100;
+        }
+        // TODO: iterate through the possible x10 digits and reference zeros{} language dynamically?
       }
     }
     return _out;
