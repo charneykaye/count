@@ -46,8 +46,8 @@ exports.isCount = {
     test.done();
   },
 
-  'CamelCase from 100 to 999': function (test) {
-    test.equal(count(120).camel(), 'OneHundredTwenty');
+  'CamelCase from 100 to 900': function (test) {
+    test.equal(count(110).camel(), 'OneHundredTen');
     test.equal(count(221).camel(), 'TwoHundredTwentyOne');
     test.equal(count(322).camel(), 'ThreeHundredTwentyTwo');
     test.equal(count(434).camel(), 'FourHundredThirtyFour');
@@ -57,6 +57,44 @@ exports.isCount = {
     test.equal(count(875).camel(), 'EightHundredSeventyFive');
     test.equal(count(989).camel(), 'NineHundredEightyNine');
     test.done();
+  },
+
+  'CamelCase from 1000 to 999000': function (test) {
+    test.equal(count(1110).camel(), 'OneThousandOneHundredTen');
+    test.equal(count(15221).camel(), 'FifteenThousandTwoHundredTwentyOne');
+    test.equal(count(75322).camel(), 'SeventyFiveThousandThreeHundredTwentyTwo');
+    test.equal(count(285434).camel(), 'TwoHundredEightyFiveThousandFourHundredThirtyFour');
+    test.equal(count(792542).camel(), 'SevenHundredNinetyTwoThousandFiveHundredFortyTwo');
+    test.done();
+  },
+
+  'CamelCase from 1000000 to 999000000': function (test) {
+    test.equal(count(1001110).camel(), 'OneMillionOneThousandOneHundredTen');
+    test.equal(count(40015221).camel(), 'FortyMillionFifteenThousandTwoHundredTwentyOne');
+    test.equal(count(60075322).camel(), 'SixtyMillionSeventyFiveThousandThreeHundredTwentyTwo');
+    test.equal(count(700285434).camel(), 'SevenHundredMillionTwoHundredEightyFiveThousandFourHundredThirtyFour');
+    test.equal(count(900792542).camel(), 'NineHundredMillionSevenHundredNinetyTwoThousandFiveHundredFortyTwo');
+    test.done();
+  },
+
+  'CamelCase from 1000000000 to 999000000000': function (test) {
+    test.equal(count(1001001110).camel(), 'OneBillionOneMillionOneThousandOneHundredTen');
+    test.equal(count(2340015221).camel(), 'TwoBillionThreeHundredFortyMillionFifteenThousandTwoHundredTwentyOne');
+    test.equal(count(7860075322).camel(), 'SevenBillionEightHundredSixtyMillionSeventyFiveThousandThreeHundredTwentyTwo');
+    test.equal(count(432700285434).camel(), 'FourHundredThirtyTwoBillionSevenHundredMillionTwoHundredEightyFiveThousandFourHundredThirtyFour');
+    test.equal(count(584900792542).camel(), 'FiveHundredEightyFourBillionNineHundredMillionSevenHundredNinetyTwoThousandFiveHundredFortyTwo');
+    test.done();
+  },
+
+  'CamelCase from 1000000000000 to 999000000000000': function (test) {
+    test.equal(count(1001001001110).camel(), 'OneTrillionOneBillionOneMillionOneThousandOneHundredTen');
+    test.equal(count(2032340015221).camel(), 'TwoTrillionThirtyTwoBillionThreeHundredFortyMillionFifteenThousandTwoHundredTwentyOne');
+    test.equal(count(3887860075322).camel(), 'ThreeTrillionEightHundredEightySevenBillionEightHundredSixtyMillionSeventyFiveThousandThreeHundredTwentyTwo');
+    test.equal(count(654432700285434).camel(), 'SixHundredFiftyFourTrillionFourHundredThirtyTwoBillionSevenHundredMillionTwoHundredEightyFiveThousandFourHundredThirtyFour');
+    test.equal(count(987584900792542).camel(), 'NineHundredEightySevenTrillionFiveHundredEightyFourBillionNineHundredMillionSevenHundredNinetyTwoThousandFiveHundredFortyTwo');
+    test.equal(count(999999999999999).camel(), 'NineHundredNinetyNineTrillionNineHundredNinetyNineBillionNineHundredNinetyNineMillionNineHundredNinetyNineThousandNineHundredNinetyNine');
+    test.done();
   }
+
 
 };

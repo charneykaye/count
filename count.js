@@ -37,14 +37,33 @@
       80: 'eighty',
       90: 'ninety'
     },
-    zeros = {
-      1: 'ten',
-      2: 'hundred',
-      3: 'thousand',
-      6: 'million',
-      9: 'billion',
-      12: 'trillion'
-    },
+    zeros = [
+      {
+        min: 2,
+        max: 2,
+        name: 'hundred'
+      },
+      {
+        min: 3,
+        max: 5,
+        name: 'thousand'
+      },
+      {
+        min: 6,
+        max: 8,
+        name: 'million'
+      },
+      {
+        min: 9,
+        max: 11,
+        name: 'billion'
+      },
+      {
+        min: 12,
+        max: 14,
+        name: 'trillion'
+      }
+    ],
     i,
     oldGlobalCount,
     hasOwnProperty = Object.prototype.hasOwnProperty,
@@ -52,18 +71,15 @@
     hasModule = (typeof module !== 'undefined' && module.exports);
 
   /**
-   * @param {number} num
-   * @returns {array} words representing the number
+   * @param {Number} num
+   * @returns {Array} words representing the number
    */
   function wordsForNumber(num) {
-    var _n = num,
-      _out = [],
-      tens,
-      hundreds,
-      thousands,
-      millions,
-      billions,
-      trillions;
+    var _n = num // number to work with
+      , _p // power of ten
+      , _m // minimum (calculator)
+      , _i // iterator
+      , _out = []; // output
 
     if (_n === 0) {
       _out.push(words[0]);
@@ -77,25 +93,23 @@
         }
         // from 20 to 99 e.g. "eighty" (leave <10)
         else if (_n < 100) {
-          tens = Math.floor(_n / 10);
-          _out.push(words[tens * 10]);
-          _n -= tens * 10;
+          _p = Math.floor(_n / 10);
+          _out.push(words[_p * 10]);
+          _n -= _p * 10;
         }
-        // from 100 to 999 e.g. "two hundred" (leave <100)
-        else if (_n < 100) {
-          hundreds = Math.floor(_n / 100);
-          _out.push(words[hundreds]);
-          _out.push(zeros[2]);
-          _n -= hundreds * 100;
+        // iterate through the possible x10 digits and reference zeros{} language dynamically
+        else {
+          for (_i in zeros) {
+            if (_n < Math.pow(10, zeros[_i].max + 1)) {
+              _m = Math.pow(10, zeros[_i].min);
+              _p = Math.floor(_n / _m);
+              _out = _out.concat(wordsForNumber(_p));
+              _out.push(zeros[_i].name);
+              _n -= _p * _m;
+              break;
+            }
+          }
         }
-        // from 100 to 999 e.g. "two hundred" (leave <100)
-        else if (_n < 1000) {
-          hundreds = Math.floor(_n / 100);
-          _out.push(words[hundreds]);
-          _out.push(zeros[2]);
-          _n -= hundreds * 100;
-        }
-        // TODO: iterate through the possible x10 digits and reference zeros{} language dynamically?
       }
     }
     return _out;
