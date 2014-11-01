@@ -1,6 +1,6 @@
 [![NPM version][npm-version-image]][npm-url] [![NPM downloads][npm-downloads-image]][npm-url] [![MIT License][license-image]][license-url] [![Build Status][travis-image]][travis-url]
 
-A tiny javascript library to count in natural language e.g. Zero, One, Two, Three, and beyond.
+A tiny javascript library to count in natural language e.g. Zero, One, Two, Three.. up to 999,999,999,999,999.
 
 ## Documentation
 
@@ -13,6 +13,7 @@ Here's all this does so far:
     
     // Unit tests
     test.equal(count(764).camel(), '"SevenHundredSixtyFour"');    
+    test.equal(count(999999999999999).camel(), 'NineHundredNinetyNineTrillionNineHundredNinetyNineBillionNineHundredNinetyNineMillionNineHundredNinetyNineThousandNineHundredNinetyNine');
    
 ## [Changelog](CHANGELOG.md)
 

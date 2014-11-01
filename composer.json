@@ -1,6 +1,6 @@
 {
   "name": "nickckaye/count",
-  "description": "A tiny javascript library to count in natural language e.g. Zero, One, Two, Three, and beyond.",
+  "description": "A tiny javascript library to count in natural language e.g. Zero, One, Two, Three.. up to 999,999,999,999,999.",
   "keywords": [
     "count",
     "date",

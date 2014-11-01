@@ -1,7 +1,7 @@
 {
   "name": "count",
   "version": "0.1.3",
-  "description": "A tiny javascript library to count in natural language e.g. Zero, One, Two, Three, and beyond.",
+  "description": "A tiny javascript library to count in natural language e.g. Zero, One, Two, Three.. up to 999,999,999,999,999.",
   "main": "count.js",
   "ignore": [
     "**/.*",
