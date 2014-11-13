@@ -1,12 +1,12 @@
 //! count.js
-//! version : 0.1.3
+//! version : 0.1.4
 //! authors : Nick Kaye
 //! license : MIT
 //! www.nickkaye.com/count-js
 
 (function (undefined) {
   var count,
-    VERSION = '0.1.3',
+    VERSION = '0.1.4',
     words = {
       0: 'zero',
       1: 'one',

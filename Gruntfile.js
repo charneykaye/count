@@ -107,6 +107,7 @@ module.exports = function (grunt) {
         '!test/browser*.js'
       ],
       options: {
+        'laxcomma':true,
         'node': true,
         'browser': true,
         'boss': false,
