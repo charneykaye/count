@@ -2,6 +2,20 @@
 
 A tiny javascript library to count in natural language e.g. Zero, One, Two, Three.. up to 999,999,999,999,999.
 
+JavaScript count in natural language e.g. Zero, One, Two, Three, and beyond.
+
+Available client-side via Bower:
+
+    bower install count
+
+Available server-side via NPM:
+
+    npm install count
+
+Open Source: [https://github.com/nickckaye/count](https://github.com/nickckaye/count)
+
+Count.js is freely distributable under the terms of the MIT license.
+
 ## Documentation
 
 ### Basic Usage
