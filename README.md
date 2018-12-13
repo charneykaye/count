@@ -12,7 +12,7 @@ Available server-side via NPM:
 
     npm install count
 
-Open Source: [https://github.com/nickckaye/count](https://github.com/nickckaye/count)
+Open Source: [https://github.com/charneykaye/count](https://github.com/charneykaye/count)
 
 Count.js is freely distributable under the terms of the MIT license.
 
