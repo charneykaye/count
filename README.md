@@ -4,11 +4,7 @@ A tiny javascript library to count in natural language e.g. Zero, One, Two, Thre
 
 JavaScript count in natural language e.g. Zero, One, Two, Three, and beyond.
 
-Available client-side via Bower:
-
-    bower install count
-
-Available server-side via NPM:
+Available via NPM:
 
     npm install count
 
