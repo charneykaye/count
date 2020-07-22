@@ -1,6 +1,6 @@
 {
   "name": "count",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "main": "count.js",
   "description": "A tiny javascript library to count in natural language e.g. Zero, One, Two, Three.. up to 999,999,999,999,999.",
   "files": [
