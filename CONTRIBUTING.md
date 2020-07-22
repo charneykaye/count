@@ -9,7 +9,7 @@ Contributing code
 To contribute, fork the library and install grunt and dependencies. You need [node](http://nodejs.org/); use [nvm](https://github.com/creationix/nvm) or [nenv](https://github.com/ryuone/nenv) to install it.
 
 ```bash
-git clone https://github.com/nickckaye/count.git
+git clone https://github.com/charneykaye/count.git
 cd count
 npm install -g grunt-cli
 npm install

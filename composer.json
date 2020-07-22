@@ -1,5 +1,5 @@
 {
-  "name": "nickckaye/count",
+  "name": "charneykaye/count",
   "description": "A tiny javascript library to count in natural language e.g. Zero, One, Two, Three.. up to 999,999,999,999,999.",
   "keywords": [
     "count",
@@ -8,11 +8,11 @@
     "format",
     "i18n"
   ],
-  "homepage": "http://github.com/nickckaye/count/",
+  "homepage": "http://github.com/charneykaye/count/",
   "authors": [
     {
-      "name": "Nick Kaye",
-      "email": "nick.c.kaye@gmail.com"
+      "name": "Charney Kaye",
+      "email": "charneykaye@gmail.com"
     }
   ],
   "license": "MIT",

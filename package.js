@@ -1,8 +1,8 @@
 var profile = {
     resourceTags: {
         ignore: function(filename, mid){
-            // only include nickckaye/count
-            return mid != "nickckaye/count";
+            // only include charneykaye/count
+            return mid != "charneykaye/count";
         },
         amd: function(filename, mid){
             return /\.js$/.test(filename);

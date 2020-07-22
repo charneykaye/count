@@ -40,5 +40,5 @@ Count.js is freely distributable under the terms of the [MIT license](LICENSE).
 [npm-version-image]: http://img.shields.io/npm/v/counts.svg?style=flat
 [npm-downloads-image]: http://img.shields.io/npm/dm/counts.svg?style=flat
 
-[travis-url]: http://travis-ci.org/nickckaye/count
-[travis-image]: http://img.shields.io/travis/nickckaye/count/master.svg?style=flat
+[travis-url]: http://travis-ci.org/charneykaye/count
+[travis-image]: http://img.shields.io/travis/charneykaye/count/master.svg?style=flat

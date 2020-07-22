@@ -1,12 +1,12 @@
 //! count.js
-//! version : 0.1.4
-//! authors : Nick Kaye
+//! version : 0.1.5
+//! authors : Charney Kaye
 //! license : MIT
-//! www.nickkaye.com/count-js
+//! https://charneykaye.com/
 
 (function (undefined) {
   var count,
-    VERSION = '0.1.4',
+    VERSION = '0.1.5',
     words = {
       0: 'zero',
       1: 'one',
@@ -221,7 +221,7 @@
     var c;
 
     // object construction must be done this way.
-    // https://github.com/nickckaye/count/issues/1423
+    // https://github.com/charneykaye/count/issues/1423
     c = {};
     c._isACountObject = true;
     c._i = input;
@@ -236,7 +236,7 @@
       'count construction falls back to js Date. This is ' +
       'discouraged and will be removed in upcoming major ' +
       'release. Please refer to ' +
-      'https://github.com/nickckaye/count/issues/1407 for more info.',
+      'https://github.com/charneykaye/count/issues/1407 for more info.',
     function (config) {
       config._d = new Date(config._i);
     }

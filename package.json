@@ -1,11 +1,10 @@
 {
   "name": "count",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A tiny javascript library to count in natural language e.g. Zero, One, Two, Three.. up to 999,999,999,999,999.",
-  "homepage": "http://www.nickkaye.com/count-js",
-  "author": "Nick Kaye <nick.c.kaye@gmail.com> (https://github.com/nickckaye)",
-  "contributors": [
-  ],
+  "homepage": "http://www.charneykaye.com/",
+  "author": "Charney Kaye <charneykaye@gmail.com> (https://github.com/charneykaye)",
+  "contributors": [],
   "keywords": [
     "count",
     "date",
@@ -19,10 +18,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nickckaye/count.git"
+    "url": "https://github.com/charneykaye/count.git"
   },
   "bugs": {
-    "url": "https://github.com/nickckaye/count/issues"
+    "url": "https://github.com/charneykaye/count/issues"
   },
   "licenses": [
     {
