@@ -1,12 +1,12 @@
 //! count.js
-//! version : 0.1.7
+//! version : 0.1.8
 //! authors : Charney Kaye
 //! license : MIT
-//! https://charneykaye.com/
+//! https://charneykaye.com
 
 (function (undefined) {
   var count,
-    VERSION = '0.1.7',
+    VERSION = '0.1.8',
     words = {
       0: 'zero',
       1: 'one',
