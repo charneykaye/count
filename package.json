@@ -39,7 +39,7 @@
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "latest",
     "grunt-env": "latest",
-    "grunt-jscs": "0.7.1",
+    "grunt-jscs": "3.0.1",
     "grunt-karma": "latest",
     "grunt-string-replace": "latest",
     "karma": "latest",
