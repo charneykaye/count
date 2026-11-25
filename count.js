@@ -2,7 +2,7 @@
 //! version : 0.1.8
 //! authors : Charney Kaye
 //! license : MIT
-//! https://charneykaye.com
+//! https://nickcharneykaye.com
 
 (function (undefined) {
   var count,
